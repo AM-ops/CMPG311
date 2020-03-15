@@ -7,4 +7,6 @@ Study unit 4 - Entity-relationship modelling
 Study unit 5 - Normalisation  
 Study unit 6 - Introduction to SQL  
 Study unit 7 - Objects in SQL  
-Study unit 8 - More advanced SQL  
+Study unit 8 - More advanced SQL\
+\
+Sources: Database Systems – Design, Implementation and Management. 13th Ed. Cengage. Coronel, C., Morris, S. 2019. 
