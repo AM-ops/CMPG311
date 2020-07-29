@@ -8,16 +8,15 @@
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{tikz}
-\usepackage{booktabs}
+\usepackage{parskip}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 \setlength{\tabcolsep}{18pt}
 \renewcommand{\arraystretch}{1.5}
 \renewcommand{\chaptername}{Study Unit}
 \begin{document}
 \linespread{1.5}
-\title{CMPG311 - Databases}
-\author{Compiled by Affaan Muhammad}
-\date{Semester 1 2020}
+\title{CMPG311 - Databases\\Additional Notes\\Semester 1}
+\date{}
 \maketitle
 \tableofcontents{}
 
@@ -34,11 +33,14 @@ Outcomes:
 \section{Why Databases?}
 In today’s world, data is ubiquitous (abundant, global, everywhere) and pervasive (unescapable, prevalent, persistent). Data is not only ubiquitous and pervasive; it is also essential for organizations to survive and prosper.
 \section{Data versus Information}
-\textbf{Data} consists of raw facts. The word raw indicates that the facts have not yet been processed to reveal their meaning.
-\textbf{Information} is the result of processing raw data to reveal its meaning. Data processing can be as simple as organizing data to reveal patterns or as complex as making forecasts or drawing inferences using statistical modeling. To reveal meaning, information requires context. Keep in mind that raw data must be properly \emph{formatted} for storage, processing, and presentation.
-In this “information age,” production of accurate, relevant, and timely information is the key to good decision making. In turn, good decision making is the key to business survival in a global market. We are now said to be entering the “knowledge age.”
-Data is the foundation of information, which is the bedrock of knowledge - that is, the body of information and facts about a specific subject. Knowledge implies familiarity, awareness, and understanding of information as it applies to an environment. A key characteristic of knowledge is that “new” knowledge can be derived from “old” knowledge.
-\\ \\ Key points:
+\textbf{Data} consists of raw facts. The word \emph{raw} indicates that the facts have not yet been processed to reveal their meaning.
+
+\textbf{Information} is the result of processing raw data to reveal its meaning. Data processing can be as simple as organizing data to reveal patterns or as complex as making forecasts or drawing inferences using statistical modeling. To reveal meaning, information requires \emph{context}. Keep in mind that raw data must be properly \emph{formatted} for storage, processing, and presentation.
+
+In this “information age,” production of accurate, relevant, and timely information is the key to good decision making. In turn, good decision making is the key to business survival in a global market.
+Data is the foundation of information, which is the bedrock of \textbf{knowledge} - that is, the body of information and facts about a specific subject. Knowledge implies familiarity, awareness, and understanding of information as it applies to an environment. A key characteristic of knowledge is that “new” knowledge can be derived from “old” knowledge.
+
+Key points:
 \begin{itemize}
 \item Data constitutes the building blocks of information.
 \item Information is produced by processing data.
@@ -50,29 +52,25 @@ Data is the foundation of information, which is the bedrock of knowledge - that 
 \section{Introducing the Database}
 A \textbf{database} is a shared, integrated computer structure that stores a collection of the following:
 \begin{itemize}
-\item End-user data—that is, raw facts of interest to the end user
+\item End-user data - that is, raw facts of interest to the end user
 \item \textbf{Metadata}, or data about data, through which the end-user data is integrated and managed
 \end{itemize}
-The metadata describes the data characteristics and the set of relationships that links the data found within the database. For example, the metadata component stores information such as the name of each data element, the type of values (numeric, dates, or text) stored on each data element, and whether the data element can be left empty. The metadata provides information that complements and expands the value and use of the data. In short, metadata presents a more complete picture of the data in the database. Given the characteristics of metadata, you might hear a database described as a “collection of \emph{self-describing} data.”\\
-A \textbf{DataBase Management System (DBMS)} is a collection of programs that manages the database structure and controls access to the data stored in the database.
+The metadata describes the data characteristics and the set of relationships that links the data found within the database. For example, the metadata component stores information such as the name of each data element, the type of values (numeric, dates, or text) stored on each data element, and whether the data element can be left empty. The metadata provides information that complements and expands the value and use of the data.
+A \textbf{Database Management System (DBMS)} is a collection of programs that manages the database structure and controls access to the data stored in the database.
 \subsection{Role and Advantages of the DBMS}
 The DBMS serves as the intermediary between the user and the database. The database structure itself is stored as a collection of files, and the only way to access the data in those files is through the DBMS. The DBMS receives all application requests and translates them into the complex operations required to fulfill those requests. The DBMS hides much of the database’s internal complexity from the application programs and users.
 \noindent In particular, a DBMS provides these advantages:
 \begin{itemize}
 \item \emph{Improved data sharing} - The DBMS helps create an environment in which end users have better access to more and better-managed data.
-\item \emph{Improved data security} - The more users access the data, the greater the risks of data security breaches. Corporations invest considerable amounts of time, effort, and money to ensure that corporate data is used properly. A DBMS provides a framework for better enforcement of data privacy and security policies.
-\item \emph{Better data integration} - Wider access to well-managed data promotes an integrated view of the organization’s operations and a clearer view of the big picture. It becomes much easier to see how actions in one segment of the company affect other segments.
+\item \emph{Improved data security} - A DBMS provides a framework for better enforcement of data privacy and security policies.
+\item \emph{Better data integration} - Wider access to well-managed data promotes an integrated view of the organization’s operations and a clearer view of the big picture.
 \item \emph{Minimized data inconsistency} - \textbf{Data inconsistency} exists when different versions of the same data appear in different places.
-\item \emph{Improved data access} - The DBMS makes it possible to produce quick answers to ad hoc queries. From a database perspective, a \textbf{query} is a specific request issued to the DBMS for data manipulation—for example, to read or update the data. Simply put, a query is a question, and an \textbf{ad hoc query} is a spur-of-the-moment question. The DBMS sends back an answer (called the \textbf{query result set}) to the application. For example, when dealing with large amounts of sales data, end users might want quick answers to questions (ad hoc queries).
+\item \emph{Improved data access} - The DBMS makes it possible to produce quick answers to ad hoc queries. From a database perspective, a \textbf{query} is a specific request issued to the DBMS for data manipulation for example, to read or update the data. Simply put, a query is a question, and an \textbf{ad hoc query} is a spur-of-the-moment question. The DBMS sends back an answer, called the \textbf{query result set} (collection of data rows) to the application.
 \item \emph{Improved decision making} - Better-managed data and improved data access make it possible to generate better-quality information, on which better decisions are based. The quality of the information generated depends on the quality of the underlying data. \textbf{Data quality} is a comprehensive approach to promoting the accuracy, validity, and timeliness of the data. While the DBMS does not guarantee data quality, it provides a framework to facilitate data quality initiatives.
 \item \emph{Increased end-user productivity} - The availability of data, combined with the tools that transform data into usable information, empowers end users to make quick, informed decisions that can make the difference between success and failure in the global economy.
 \end{itemize}
 \subsection{Types of Databases}
-A DBMS can be used to build many different types of databases. Each database stores a
-particular collection of data and is used for a specific purpose. Over the years, as technology and innovative uses of databases have evolved, different methods have been used
-to classify databases. For example, databases can be classified by the number of users
-supported, where the data is located, the type of data stored, the intended data usage,
-and the degree to which the data is structured.
+A DBMS can be used to build many different types of databases. Each database stores a particular collection of data and is used for a specific purpose.
 Definitions to note:
 \begin{itemize}
 \item \textbf{Single-user Database} - A database that supports only one user at a time.
@@ -96,16 +94,13 @@ Definitions to note:
 \item \textbf{Unstructured Data} - Data that exists in its original, raw state; that is, in the format in which it was collected. 
 \item \textbf{Structured Data} - Data that has been formatted to facilitate storage, use, and information generation. 
 \item \textbf{Semistructured Data} - Data that has already been processed to some extent.
-\item \textbf{Extensible Markup Language (XML)} - A metalanguage used to represent and manipulate data elements. Unlike other markup languages, XML permits the manipulation of a
-document’s data elements.
+\item \textbf{Extensible Markup Language (XML)} - A metalanguage used to represent and manipulate data elements. Unlike other markup languages, XML permits the manipulation of a document’s data elements.
 \item \textbf{XML Database} - Supports the storage and management of semistructured XML data.
 \item \textbf{Social Media} - Web and mobile technologies that enable “anywhere, anytime, always on” human interactions.
 \item \textbf{NoSQL} - A new generation of DBMS that is not based on the traditional relational database model.
 \end{itemize}
 \section{Why Database Design is Important}
-\textbf{Database design} refers to the activities that focus on the design of the database
-structure that will be used to store and manage end-user data. The process yields the description of the database structure and determines the database components. It is the second phase of the database life cycle.\\
-Proper database design requires the designer to identify precisely the database’s expected use. Designing a transactional database emphasizes accurate and consistent data and operational speed. Designing a data warehouse database emphasizes the use of historical and aggregated data. Designing a database to be used in a centralized, single-user environment requires a different approach from that used in the design of a distributed, multiuser database. 
+\textbf{Database design} refers to the activities that focus on the design of the database structure that will be used to store and manage end-user data. The process yields the description of the database structure and determines the database components. It is the second phase of the database life cycle. Proper database design requires the designer to identify precisely the database’s expected use. A well-designed database facilitates data management and generates accurate and valuable information. A poorly designed database is likely to become a breeding ground for difficult-to-trace errors that may lead to poor decision making and poor decision making can lead to the failure of an organization. Database design is simply too important to be left to luck.
 \section{Evolution of File System Data Processing}
 \subsection{Manual File Systems}
 Historically, such systems were often manual, paper-and-pencil systems. The papers within these systems were organized to facilitate the expected use of the data. Typically, this was accomplished through a system of file folders and filing cabinets.
@@ -134,36 +129,36 @@ The following problems are noted:
 \begin{itemize}
 \item \textbf{Structural Dependence} - A data characteristic in which a change in the database schema affects data access, thus requiring changes in all access programs. 
 \item \textbf{Structural Independence} - A data characteristic in which changes in the database schema do not affect data access.
-\item \textbf{Data Type} - Defines the kind of values that can be used or stored. Also, used in programming languages and database systems to determine the operations that can be applied to such data.
+\item \textbf{Data Type} - Defines the kind of values that can be used or stored.
 \item \textbf{Data Dependence} - A data condition in which data representation and manipulation are dependent on the physical data storage characteristics.
 \item \textbf{Data Independence} - A condition in which data access is unaffected by changes in the physical data storage characteristics. 
 \item \textbf{Logical Data Format} - The way a person views data within the context of a problem domain.
-\item \textbf{Physical Data Format} - The way a computer “sees” (stores) data.
+\item \textbf{Physical Data Format} - The way a computer ``sees’’ (stores) data.
 \end{itemize}
 \subsection{Data redundancy}
 \begin{itemize}
 \item \textbf{Islands of Information} - In the old file system environment, pools of independent, often duplicated, and inconsistent data created and managed by different departments.
-\item \textbf{Data Integrity} - In a relational database, a condition in which the data in the database complies with all entity and referential integrity constraints. Also defined as the condition in which all of the data in the database is consistent with the real-world events and conditions. In other words, data integrity means the following:
+\item \textbf{Data Integrity} - A condition in which the data in the database complies with all entity and referential integrity constraints(consistent with the real-world events and conditions). In other words, data integrity means the following:
 \begin{itemize}
 \item \emph{Data is accurate} — there are no data inconsistencies.
 \item \emph{Data is verifiable} — the data will always yield consistent results.
 \end{itemize}
 \item \textbf{Data Redundancy} - Exists when the same data is stored unnecessarily at different places. This Uncontrolled data redundancy sets the stage for the following:
 \begin{itemize}
-\item \emph{Poor data security} - Having multiple copies of data increases the chances for a copy of
-the data to be susceptible to unauthorized access.
+\item \emph{Poor data security} - Having multiple copies of data increases the chances for a copy of the data to be susceptible to unauthorized access.
 \item \emph{Data inconsistency} - Data inconsistency exists when different and conflicting versions of the same data appear in different places.
-\item \emph{Data-entry errors} Data-entry errors are more likely to occur when complex entries are made in several different files or recur frequently in one or more files.
+\item \emph{Data-entry errors} - More likely to occur when complex entries are made in several different files or recur frequently in one or more files.
 \item \emph{Data integrity problems}
 \end{itemize}
 \end{itemize}
 \subsection{Data Anomalies}
-A \textbf{data anomaly} develops when not all of the required changes in the redundant data are made successfully. The data anomalies are commonly defined as follows:
+A \textbf{data anomaly} develops when not all of the required changes in the redundant data are made successfully i.e. inconsistent changes have been made to a database. The types of data anomalies are:
 \begin{itemize}
 \item \emph{Update anomalies}
 \item \emph{Insertion anomalies}
 \item \emph{Deletion anomalies}
 \end{itemize}
+\pagebreak
 \section{Database Systems}
 \subsection{The Database System Environment}
 The term \textbf{database system} refers to an organization of components that define and regulate the collection, storage, management, and use of data within a database environment. From a general management point of view, the database system is composed of the five major parts: Hardware, Software, People, Procedures, and Data.
@@ -172,35 +167,36 @@ The term \textbf{database system} refers to an organization of components that d
 \item \textbf{Software} - Although the most readily identified software is the DBMS itself, three types of software are needed to make the database system function fully: operating
 system software, DBMS software, and application programs and utilities.
 \begin{itemize}
-\item \emph{Operating system software} manages all hardware components and makes it possible for all other software to run on the computers. Examples of operating system software are Microsoft Windows, Linux, Mac OS, UNIX, and MVS.
-\item \emph{DBMS software} manages the database within the database system. Some examples of DBMS software are Microsoft’s SQL Server, Oracle Corporation’s Oracle, Oracle’s MySQL, and IBM’s DB2.
-\item \emph{Application programs and utility software} are used to access and manipulate data in the DBMS and to manage the computer environment in which data access and manipulation take place. Application programs are most commonly used to access data within the database to generate reports, tabulations, and other information to facilitate decision making. Utilities are the software tools used to help manage the database system’s computer components. For example, all of the major DBMS vendors now provide graphical user interfaces (GUIs) to help create database structures, control database access, and monitor database operations.
+\item \emph{Operating system software} manages all hardware components and makes it possible for all other software to run on the computers.
+\item \emph{DBMS software} manages the database within the database system.
+\item \emph{Application programs and utility software} are used to access and manipulate data in the DBMS and to manage the computer environment in which data access and manipulation take place.
 \end{itemize}
 \item \textbf{People} - This component includes all users of the database system. Five types of users can be identified in a database system:
 \begin{itemize}
 \item \emph{System administrators} oversee the database system’s general operations.
 \item \emph{Database administrators} manage the DBMS and ensure that the database is functioning properly.
 \item \emph{Database designers} design the database structure. They are, in effect, the database architects.
-\item \emph{System analysts and programmers} design and implement the application programs. They design and create the data-entry screens, reports, and procedures through which end users access and manipulate the database’s data.
+\item \emph{System analysts and programmers} design and implement the application programs.
 \item \emph{End users} are the people who use the application programs to run the organization’s daily operations.
 \end{itemize}
 \item \textbf{Procedures} - Are the instructions and rules that govern the design and use of the database system.
 \item \textbf{Data} - The word data covers the collection of facts stored in the database.
 \end{itemize}
+\pagebreak
 \subsection{DBMS Functions}
 A DBMS performs several important functions that are explained as follows:
 \begin{itemize}
 \item \emph{Data dictionary management} - The DBMS stores definitions of the data elements and their relationships (metadata) in a data dictionary. In turn, all programs that access
 the data in the database work through the DBMS. The DBMS uses the \textbf{data dictionary} to look up the required data component structures and relationships, thus
-relieving you from having to code such complex relationships in each program. \textbf{Data dictionary} is a DBMS component that stores metadata—data about data. It contains data definitions as well as data characteristics and relationships and may also include data that is external to the DBMS.
-\item \emph{Data storage management} - The DBMS creates and manages the complex structures required for data storage, thus relieving you from the difficult task of defining and programming the physical data characteristics. A modern DBMS provides storage not only for the data but also for related data-entry forms or screen definitions, report definitions, data validation rules, procedural code, structures to handle video and picture formats, and so on. Data storage management is also important for database performance tuning. \textbf{Performance tuning} relates to the activities that make the database perform more efficiently in terms of storage and access speed.
+relieving you from having to code such complex relationships in each program.
+\item \emph{Data storage management} - The DBMS creates and manages the complex structures required for data storage, thus relieving you from the difficult task of defining and programming the physical data characteristics. Data storage management is also important for database performance tuning. \textbf{Performance tuning} relates to the activities that make the database perform more efficiently in terms of storage and access speed.
 \item \emph{Data transformation and presentation} - The DBMS transforms entered data to conform to required data structures. The DBMS relieves you of the chore of distinguishing between the logical data format and the physical data format.
 \item \emph{Security management} - The DBMS creates a security system that enforces user security and data privacy. Security rules determine which users can access the database, which data items each user can access, and which data operations the user can perform.
 \item \emph{Multiuser access control} - To provide data integrity and data consistency, the DBMS uses sophisticated algorithms to ensure that multiple users can access the database
 concurrently without compromising its integrity.
 \item \emph{Backup and recovery management} - The DBMS provides backup and data recovery to ensure data safety and integrity. Current DBMS systems provide special utilities that allow the DBA to perform routine and special backup and restore procedures.
 \item \emph{Data integrity management} - The DBMS promotes and enforces integrity rules, thus minimizing data redundancy and maximizing data consistency. The data relationships stored in the data dictionary are used to enforce data integrity.
-\item \emph{Database access languages and application programming interfaces} - The DBMS provides data access through a query language. A \textbf{query language} is a nonprocedural language—one that lets the user specify what must be done without having to specify how. \textbf{Structured Query Language (SQL)} is the de facto query language and data access standard supported by the majority of DBMS vendors. The DBMS also provides application programming interfaces to procedural languages such as COBOL, C, Java, Visual Basic.NET, and C\#.
+\item \emph{Database access languages and application programming interfaces} - The DBMS provides data access through a query language. A \textbf{query language} is a nonprocedural language--one that lets the user specify what must be done without having to specify how. \textbf{Structured Query Language (SQL)} is the de facto query language and data access standard supported by the majority of DBMS vendors.
 \item \emph{Database communication interfaces} - A current-generation DBMS accepts end-user requests via multiple, different network environments.
 \end{itemize}
 \subsection{Managing the Database System}
@@ -214,15 +210,20 @@ the latest patches and security measures to all components.
 \item \emph{Frequent upgrade/replacement cycles} - DBMS vendors frequently upgrade their products by adding new functionality. Such new features often come bundled in new upgrade versions of the software. Some of these versions require hardware upgrades.
 \end{itemize}
 \section{Data Modeling and Data Models}
-\textbf{Data modeling}, the first step in designing a database, refers to the process of creating a specific data model for a determined problem domain. (A \emph{problem domain} is a clearly defined area within the real-world environment, with a well-defined scope and boundaries that will be systematically addressed.) A data model is a relatively
-simple representation, usually graphical, of more complex real-world data structures. In general terms, a model is an abstraction of a more complex real-world object or event. A
-model’s main function is to help you understand the complexities of the real-world environment. Data modeling is an iterative, progressive process. You start with a simple understanding of the problem domain, and as your understanding increases, so does the level of detail of the data model.
+\textbf{Data modeling}, the first step in designing a database, refers to the process of creating a specific data model for a determined problem domain. (A \emph{problem domain} is a clearly defined area within the real-world environment, with a well-defined scope and boundaries that will be systematically addressed.) A \textbf{data model} is a relatively simple representation, usually graphical, of more complex real-world data structures. In general terms, a model is an abstraction of a more complex real-world object or event. A model’s main function is to help you understand the complexities of the real-world environment. Data modeling is an iterative, progressive process. You start with a simple understanding of the problem domain, and as your understanding increases, so does the level of detail of the data model.
+
+An implementation-ready data model should contain at least the following components:
+\begin{itemize}
+\item A description of the data structure that will store the end-user data
+\item A set of enforceable rules to guarantee the integrity of the data
+\item A data manipulation methodology to support the real-world data transformations
+\end{itemize}
 \section{The Importance of Data Models}
 Data models can facilitate interaction among the designer, the applications programmer, and the end user. A well-developed data model can even foster improved understanding of the organization for which the database design is developed. In short, data models are a communication tool. When a good database blueprint is available, it does not matter that an applications programmer’s view of the data is different from that of the manager or the end user. Conversely, when a good database blueprint is not available, problems are likely to ensue. Keep in mind that a house blueprint is an abstraction; you cannot live in the blueprint. Similarly, the data model is an abstraction; you cannot draw the required data out of the data model. Just as you are not likely to build a good house without a blueprint, you are equally unlikely to create a good database without first creating an appropriate data model.
 \section{Data Model Basic Building Blocks}
 The basic building blocks of all data models are entities, attributes, relationships, and constraints:
 \begin{itemize}
-\item An \textbf{entity} is a person, place, thing, or event about which data will be collected and stored. An entity represents a particular type of object in the real world, which means an entity is “distinguishable”—that is, each entity occurrence is unique and distinct.
+\item An \textbf{entity} is a person, place, thing, or event about which data will be collected and stored. An entity represents a particular type of object in the real world, which means an entity is “distinguishable”--that is, each entity occurrence is unique and distinct.
 \item An \textbf{attribute} is a characteristic of an entity.
 \item A \textbf{constraint} is a restriction placed on data, usually expressed in the form of rules.
 \item A \textbf{relationship} describes an association among entities:
@@ -232,6 +233,7 @@ The basic building blocks of all data models are entities, attributes, relations
 \item \emph{one-to-one (1:1 or 1..1) relationship} - Associations among 2 or more entities that are used by data models. In a 1:1 relationship, 1 entity instance is associated with only 1 instance of the related entity.
 \end{itemize}
 \end{itemize}
+\pagebreak
 \section{Business Rules}
 From a database point of view, the collection of data becomes meaningful only when it reflects properly defined \emph{business rules}. A \textbf{business rule} is a brief, precise, and unambiguous description of a policy, procedure, or principle within a specific organization. They are derived from a detailed description of an organization’s operations help to create and enforce actions within that organization’s environment. Additionally:
 \begin{itemize}
@@ -242,6 +244,7 @@ From a database point of view, the collection of data becomes meaningful only wh
 \end{itemize}
 \subsection{Discovering Business Rules}
 The main sources of business rules are company managers, policy makers, department managers, and written documentation such as a company’s procedures, standards, and operations manuals. A faster and more direct source of business rules is direct interviews with end users.
+
 The process of identifying and documenting business rules is essential to database design for several reasons:
 \begin{itemize}
 \item It helps to standardize the company’s view of data.
@@ -250,17 +253,20 @@ The process of identifying and documenting business rules is essential to databa
 \item It allows the designer to understand business processes.
 \item It allows the designer to develop appropriate relationship participation rules and constraints and to create an accurate data model.
 \end{itemize}
-Please note that not all business rules can be modeled.
+\begin{center}
+\emph{Please note that not all business rules can be modeled.}
+\end{center}
 \subsection{Translating Business Rules into Data Model Components}
-As a general rule, a noun in a business rule will translate into an entity in the model, and a verb (active or passive) that associates the nouns will translate into a relationship among the entities. To properly identify the type of relationship, you should consider that relationships are bidirectional; that is, they go both ways.
+As a general rule, a noun in a business rule will translate into an entity in the model, and a verb(active or passive) that associates the nouns will translate into a relationship among the entities. To properly identify the type of relationship, you should consider that relationships are bidirectional; that is, they go both ways.
 \subsection{Naming Conventions}
 Entity names should be descriptive of the objects in the business environment and use terminology that is familiar to the users. An attribute name should also be descriptive of the data represented by that attribute. It is also a good practice to prefix the name of an attribute with the name or abbreviation of the entity in which it occurs.
 \section{The Evolution of Data Models}
 The quest for better data management has led to several models that attempt to resolve the previous model’s critical shortcomings and to provide solutions to ever-evolving data management needs. These models represent schools of thought as to what a database is, what it should do, the types of structures that it should employ, and the technology that would be used to implement these structures.
 \subsection{Hierarchical and Network Models}
 The \textbf{hierarchical model} was developed in the 1960s to manage large amounts of data for complex manufacturing projects. The model’s basic logical structure is represented by an upside-down tree. The hierarchical structure contains levels, or segments. A \textbf{segment} is the equivalent of a file system’s record type. The top record is the root segment. Each segment has a 1:M relationship to the segment directly below it.
-The \textbf{network model} was created to represent complex data relationships more effectively than the hierarchical model, to improve database performance, and to impose a database standard. In the network model, the user perceives the network database as a
-collection of records in 1:M relationships. However, the network model allows a record to have more than one parent. The definitions of standard database concepts that emerged with the network model are still used by modern data models:
+The \textbf{network model} was created to represent complex data relationships more effectively than the hierarchical model, to improve database performance, and to impose a database standard. In the network model, the user perceives the network database as a collection of records in 1:M relationships. However, the network model allows a record to have more than one parent. 
+
+The definitions of standard database concepts that emerged with the network model are still used by modern data models:
 \begin{itemize}
 \item The \textbf{schema} is the conceptual organization of the entire database as viewed by the database administrator.
 \item The \textbf{subschema} defines the portion of the database “seen” by the application programs that actually produce the desired information from the data within the database.
@@ -269,23 +275,24 @@ collection of records in 1:M relationships. However, the network model allows a 
 structure, schema, and subschema.
 \end{itemize}
 \subsection{The Relational Model}
-The \textbf{relational model} was introduced in 1970 by E. F. Codd of IBM. The relational model’s foundation is a mathematical concept known as a relation, you can think of a \textbf{relation} (sometimes called a \textbf{table}) as a two-dimensional structure composed of intersecting rows and columns. Each row in a relation is called a \textbf{tuple}. Each column represents an attribute. The relational data model is implemented through a very sophisticated \textbf{relational database management system (RDBMS)}. The RDBMS performs the same basic functions provided by the hierarchical and network DBMS systems, in addition to a host of other functions that make the relational data model easier to understand and implement. Arguably the most important advantage of the RDBMS is its ability to hide the complexities of the relational model from the user. The RDBMS manages all of the physical details, while the user sees the relational database as a collection of tables in which data is stored. The user can manipulate and query the data in a way that seems intuitive and logical. Tables are related to each other through the sharing of a common attribute (a value in a column).
-The relational model provides a minimum level of controlled redundancy to eliminate most of the redundancies commonly found in file systems.
-The relationship type (1:1, 1:M, or M:N) is often shown in a relational schema. A \textbf{relational diagram} is a representation of the relational database’s entities, the attributes within those entities, and the relationships between those entities.
-A relational table stores a collection of related entities. In this respect, the relational database table resembles a file, but there is a crucial difference between a table and a file: a table yields complete data and structural independence because it is a purely logical structure. How the data is physically stored in the database is of no concern to the user or the designer; the perception is what counts.
-Another reason for the relational data model’s rise to dominance is its powerful and flexible query language. Most relational database software uses Structured Query Language (SQL), which allows the user to specify what must be done without specifying how. The RDBMS uses SQL to translate user queries into instructions for retrieving the requested data. SQL makes it possible to retrieve data with far less effort than any other database or file environment.
-From an end-user perspective, any SQL-based relational database application involves three parts: a user interface, a set of tables stored in the database, and the SQL “engine.” Each of these parts is explained as follows:
+The \textbf{relational model} was introduced in 1970 by E. F. Codd of IBM. The relational model’s foundation is a mathematical concept known as a relation, you can think of a \textbf{relation} (sometimes called a \textbf{table}) as a two-dimensional structure composed of intersecting rows and columns. Each row in a relation is called a \textbf{tuple}. Each column represents an attribute. The relational data model is implemented through a very sophisticated \textbf{relational database management system (RDBMS)}. The RDBMS performs the same basic functions provided by the hierarchical and network DBMS systems, in addition to a host of other functions that make the relational data model easier to understand and implement. Arguably the most important advantage of the RDBMS is its ability to hide the complexities of the relational model from the user.
+
+A \textbf{relational diagram} is a representation of the relational database’s entities, the attributes within those entities, and the relationships between those entities. A relational table stores a collection of related entities.
+
+Most relational database software uses Structured Query Language (SQL), which allows the user to specify what must be done without specifying how. From an end-user perspective, any SQL-based relational database application involves three parts: a user interface, a set of tables stored in the database, and the SQL “engine.”
+
+Each of these parts is explained as follows:
 \begin{itemize}
 \item \emph{The end-user interface}. Basically, the interface allows the end user to interact with the data.
 \item \emph{A collection of tables stored in the database}. In a relational database, all data is perceived to be stored in tables. The tables simply “present” the data to the end user in a way that is easy to understand. Each table is independent. Rows in different tables are related by common values in common attributes.
-\item \emph{SQL engine}. Largely hidden from the end user, the SQL engine executes all queries, or data requests. Keep in mind that the SQL engine is part of the DBMS software. The end user uses SQL to create table structures and to perform data access and table maintenance. The SQL engine processes all user requests. Hence, SQL is said to be a declarative language that tells what must be done but not how.
+\item \emph{SQL engine}. Largely hidden from the end user, the SQL engine executes all queries, or data requests.
 \end{itemize}
 \subsection{The Entity Relationship Model}
-The conceptual simplicity of relational database technology triggered the demand for RDBMSs. In turn, the rapidly increasing requirements for transaction and information created the need for more complex database implementation structures, thus creating the need for more effective database design tools. Thus, the \textbf{entity relationship (ER) model}, or \textbf{ERM}, has become a widely accepted standard for data modeling. Peter Chen first introduced the ER data model in 1976; the graphical representation of entities and their relationships in a database structure quickly became popular because it complemented the relational data model concepts. The relational data model
-and ERM combined to provide the foundation for tightly structured database design. ER models are normally represented in an entity relationship diagram (ERD), which uses graphical representations to model database components. You will learn how to use ERDs to design databases in Chapter 4, Entity Relationship (ER) Modeling. The ER model is based on the following components:
+The conceptual simplicity of relational database technology triggered the demand for RDBMSs. In turn, the rapidly increasing requirements for transaction and information created the need for more complex database implementation structures, thus creating the need for more effective database design tools. Thus, the \textbf{entity relationship (ER) model}, or \textbf{ERM}, has become a widely accepted standard for data modeling. Peter Chen first introduced the ER data model in 1976. ER models are normally represented in an \textbf{entity relationship diagram (ERD)}, which uses graphical representations to model database components.
+
+The ER model is based on the following components:
 \begin{itemize}
-\item \emph{Entity}. An entity is defined as anything about which data will be collected and stored. An entity is represented in the ERD by a rectangle, also known as an entity box. The name of the entity, a noun, is written in the center of
-the rectangle. The entity name is generally written in capital letters and in singular form. Usually, when applying the ERD to the relational model, an entity is mapped to a relational table. Each row in the relational table is known as an \textbf{entity instance} or \textbf{entity occurrence} in the ER model. A collection of like entities is known as an \textbf{entity set}.
+\item \emph{Entity}. An entity is defined as anything about which data will be collected and stored. Usually, when applying the ERD to the relational model, an entity is mapped to a relational table. Each row in the relational table is known as an \textbf{entity instance} or \textbf{entity occurrence} in the ER model. A collection of like entities is known as an \textbf{entity set}.
 \item Each entity consists of a set of \emph{attributes} that describes particular characteristics of the entity.
 \item \emph{Relationships}. They describe associations among data. Most relationships describe associations between two entities. When the basic data model components were introduced, three types of data relationships were illustrated: one-to-many (1:M), many-to-many (M:N), and one-to-one (1:1). The ER model uses the term connectivity to label the relationship types. The name of the relationship is usually an active or passive verb. The different types of ER notations are: the original \textbf{Chen notation}, the \textbf{Crow’s Foot notation}, and the newer \textbf{class diagram notation}, which is part of the Unified Modeling Language (UML).
 \end{itemize}
@@ -300,17 +307,18 @@ The OO data model is based on the following components:
 \begin{itemize}
 \item An \textbf{object} is an abstraction of a real-world entity. More precisely, an object represents only one occurrence of an entity.
 \item \textbf{Attributes} describe the properties of an object.
-\item Objects that share similar characteristics are grouped in classes. A \textbf{class} is a collection of similar objects with shared structure (attributes) and behavior (methods). A class’s \textbf{method} represents a real-world action.
+\item Objects that share similar characteristics are grouped in classes. A \textbf{class} is a collection of similar objects with shared structure(attributes) and behavior(methods). A class’s \textbf{method} represents a real-world action.
 \item Classes are organized in a class hierarchy. The \textbf{class hierarchy} resembles an upsidedown tree in which each class has only one parent.
 \item \textbf{Inheritance} is the ability of an object within the class hierarchy to inherit the attributes and methods of the classes above it.
 \item Object-oriented data models are typically depicted using \textbf{Unified Modeling Language (UML)} class diagrams. UML is a language based on OO concepts that describes a set of diagrams and symbols you can use to graphically model a system. UML \textbf{class diagrams} are used to represent data and its relationships within the larger UML object-oriented system’s modeling language.
 \end{itemize}
 \subsection{Object/Relational and XML}
-Facing the demand to support more complex data representations, the relational model’s main vendors evolved the model further and created the \textbf{extended relational data model (erDM)}. The ERDM adds many of the OO model’s features within the inherently simpler relational database structure. The ERDM gave birth to a new generation of relational databases that support OO features such as objects (encapsulated data and methods), extensible data types based on classes, and inheritance. That’s why a DBMS based on the ERDM is often described as an \textbf{object/relational database management system (O/r DBMs)}. Today, most relational database products can be classified as object/relational, and
-they represent the dominant market share of OLTP and OLAP database applications. The success of the O/R DBMSs can be attributed to the model’s conceptual simplicity, data integrity, easy-to-use query language, high transaction performance, high availability, security, scalability, and expandability. In contrast, the OO DBMS is popular in niche markets such as computer-aided drawing/computer-aided manufacturing (CAD/
-CAM), geographic information systems (GIS), telecommunications, and multimedia, which require support for more complex objects.
-From the start, the OO and relational data models were developed in response to different problems. The OO data model was created to address very specific engineering needs, not the wide-ranging needs of general data management tasks. The relational
-model was created with a focus on better data management based on a sound mathematical foundation. Given its focus on a smaller set of problem areas, it is not surprising that the OO market has not grown as rapidly as the relational data model market. The use of complex objects received a boost with the Internet revolution. When organizations integrated their business models with the Internet, they realized its potential to access, distribute, and exchange critical business information. This resulted in the widespread adoption of the Internet as a business communication tool. Within this environment, \textbf{extensible Markup Language (xML)} emerged as the defacto standard for the efficient and effective exchange of structured, semistructured, and unstructured data. Organizations that used XML data soon realized that they needed to manage large amounts of unstructured data such as word-processing documents, webpages, emails, and diagrams. To address this need, XML databases emerged to manage unstructured data within a native XML format. At the same time, O/R DBMSs added support for XML-based documents within their relational data structure.
+Facing the demand to support more complex data representations, the relational model’s main vendors evolved the model further and created the \textbf{extended relational data model (erDM)}. The ERDM adds many of the OO model’s features within the inherently simpler relational database structure. The ERDM gave birth to a new generation of relational databases that support OO features such as objects (encapsulated data and methods), extensible data types based on classes, and inheritance. That’s why a DBMS based on the ERDM is often described as an \textbf{object/relational database management system (O/r DBMs)}.
+
+Today, most relational database products can be classified as object/relational, and they represent the dominant market share of OLTP and OLAP database applications. The success of the O/R DBMSs can be attributed to the model’s conceptual simplicity, data integrity, easy-to-use query language, high transaction performance, high availability, security, scalability, and expandability. In contrast, the OO DBMS is popular in niche markets such as computer-aided drawing/computer-aided manufacturing (CAD/CAM), geographic information systems (GIS), telecommunications, and multimedia, which require support for more complex objects.
+
+\textbf{Extensible Markup Language (XML)} emerged as the de facto standard for the efficient and effective exchange of structured, semistructured, and unstructured data. Unlike other markup languages,
+XML permits the manipulation of a document’s data elements.
 \subsection{Emerging Data Models}
 \textbf{Big Data} refers to a movement to find new and better ways to manage large amounts of web and sensor-generated data and derive business insight from it, while simultaneously providing high performance and scalability at a reasonable cost.
 The term Big Data has been used in many different frameworks, from law to statistics to economics to computing. The basic characteristics of Big Data databases are:
@@ -332,7 +340,7 @@ Some of the most frequently used Big Data technologies are:
 \item \emph{Hadoop Distributed File system (HDFs)} is a highly distributed, fault-tolerant file storage system designed to manage large amounts of data at high speeds. In order to achieve high throughput, HDFS uses the write-once, read many model. This means that once the data is written, it cannot be modified. HDFS uses three types of nodes: a \textbf{name node} that stores all the metadata about the file system, a \textbf{data node} that stores fixed-size data blocks (that could be replicated to other data nodes), and a \textbf{client node} that acts as the interface between the user application and the HDFS.
 \item \emph{Mapreduce} is an open-source application programming interface (API) that provides fast data analytics services. MapReduce distributes the processing of the data among thousands of nodes in parallel. MapReduce works with structured and nonstructured data. The MapReduce framework provides two main functions: Map and Reduce. In general terms, the Map function takes a job and divides it into smaller units of work, and the Reduce function collects all the output results generated from the nodes and integrates them into a single result set.
 \end{itemize}
-\item \textbf{NosQL} is a large-scale distributed database system that stores structured and unstructured data in efficient ways.
+\item \textbf{NoSQL} is a large-scale distributed database system that stores structured and unstructured data in efficient ways.
 \end{itemize}
 The new generation of databases have the following general characteristics:
 \begin{itemize}
@@ -349,13 +357,14 @@ The new generation of databases have the following general characteristics:
 \caption{The Evolution of Data Models}
 \end{figure}
 \section{Degrees of Data Abstraction}
+In the early 1970s, the American National standards institute (ANSI) Standards Planning and Requirements Committee (SPARC) defined a framework for data modeling based on degrees of data abstraction. The resulting ANSI/SPARC architecture defines three levels of data abstraction: \textbf{external, conceptual, and internal}. 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{DLAbs}
 \caption{Data Abstraction Levels}
 \end{figure}
 \subsection{The External Model}
-The \textbf{external model} is the end users’ view of the data environment. The term end users refers to people who use the application programs to manipulate the data and generate information. Companies are generally divided into several business units, such as sales, finance, and marketing. Each business unit is subject to specific constraints and requirements, and each one uses a subset of the overall data in the organization. Therefore, end users within those business units view their data subsets as separate from or external to other units within the organization. Because data is being modeled, ER diagrams will be used to represent the external views. A specific representation of an external view is known as an \textbf{external schema}. Also note that \emph{although the application views are isolated from each other, each view shares a common entity with the other view.}
+The \textbf{external model} is the end users’ view of the data environment. The term end users refers to people who use the application programs to manipulate the data and generate information. A specific representation of an external view is known as an \textbf{external schema}. Also note that \emph{although the application views are isolated from each other, each view shares a common entity with the other view.}
 The use of external views that represent subsets of the database has some important advantages:
 \begin{itemize}
 \item It is easy to identify specific data required to support each business unit’s operations.
@@ -366,14 +375,14 @@ The use of external views that represent subsets of the database has some import
 \subsection{The Conceptual Model}
 The \textbf{conceptual model} represents a global view of the entire database by the entire organization. That is, the conceptual model integrates all external views (entities, relationships, constraints, and processes) into a single global view of the data in the enterprise. Also known as a \textbf{conceptual schema}, it is the basis for the identification and high-level description of the main data objects. The most widely used conceptual model is the ER model. The ERD is used to graphically \emph{represent} the conceptual schema. The conceptual model yields some important advantages:
 \begin{itemize}
-\item It provides a birdseye view of the data environment that is relatively easy to understand.
+\item It provides a \emph{birdseye} view of the data environment that is relatively easy to understand.
 \item It is independent of both software and hardware. \textbf{Software independence} means that the model does not depend on the DBMS software used to implement the model. \textbf{Hardware independence} means that the model does not depend on the hardware used in the implementation of the model. Therefore, changes in either the hardware or the DBMS software will have no effect on the database design at the conceptual level. Generally, the term logical design refers to the task of creating a conceptual data model that could be implemented in any DBMS.
 \end{itemize}
 \subsection{The Internal Model}
 Once a specific DBMS has been selected, the \textbf{internal model} maps the conceptual model to the DBMS. The internal model is the representation of the database as “seen” by the DBMS. An \textbf{internal schema} depicts a specific representation of an internal model, using the database constructs supported by the chosen database. Because the internal model depends on specific database software, it is said to be software dependent. Therefore, a change in the DBMS software requires that the internal model be changed to fit the characteristics and requirements of the implementation database model. When you can change the internal model without affecting the conceptual model, you have \textbf{logical independence}. However, the internal model is still hardware independent because it is unaffected by the type of computer on which the software is installed. Therefore, a change in storage devices or even a change in operating systems will not affect the internal model.
 \subsection{The Physical Model}
 The \textbf{physical model} operates at the lowest level of abstraction, describing the way data is saved on storage media such as magnetic, solid state, or optical media. The physical model requires the definition of both the physical storage devices and the (physical) access methods required to reach the data within those storage devices, making it both software and hardware dependent. The storage structures used are dependent on the software (the DBMS and the operating system) and on the type of storage devices the computer can handle. When you can change the physical model without affecting the internal model, you have \textbf{physical independence}. Therefore, a change in storage devices or methods and even a change in operating system will not affect the internal model.
-
+%“ ” ’
 \chapter{Database Design}
 Outcomes:
 \begin{itemize}
@@ -426,21 +435,22 @@ The \textbf{Database Life Cycle (DBLC)} contains six phases: database initial st
 \subsection{The Database Initial Study}
 The overall purpose of the database initial study is to:
 \begin{enumerate}
-\item \emph{Analyze the company situation}\\ The \emph{company situation} describes the general conditions in which a company operates, its organizational structure, and its mission. The following issues must be resolved:
+\item \emph{Analyze the company situation}
+The \emph{company situation} describes the general conditions in which a company operates, its organizational structure, and its mission. The following issues must be resolved:
 \begin{enumerate}
 \item \emph{What is the organization’s general operating environment, and what is its mission within that environment?} The design must satisfy the operational demands created by the organization’s mission.
 \item \emph{What is the organization’s structure?} Knowing who controls what and who reports to whom is quite useful when you need to define required information flows, specific report and query formats, and so on.
 \end{enumerate}
-\item \emph{Define problems and constraints} \\
+\item \emph{Define problems and constraints}
 The process of defining problems might initially appear to be unstructured. Company end users often cannot precisely describe the larger scope of company operations or identify the real problems encountered during company operations. During the initial problem definition process, the designer is likely to collect very broad problem descriptions. After the initial declarations, the database designer must continue to probe carefully to generate additional information that will help define the problems within the larger framework of company operations. Finding precise answers is important, especially concerning the operational relationships among business units.
-\item \emph{Define objectives} \\
+\item \emph{Define objectives}
 A proposed database system must be designed to help solve at least the major problems identified during the problem discovery process. Note that the initial study phase also yields proposed problem solutions. The designer’s job is to make sure that his or her database system objectives correspond to those envisioned by the end users. In any case, the database designer must begin to address the following questions:
 \begin{itemize}
 \item What is the proposed system’s initial objective?
 \item Will the system interface with other existing or future systems in the company?
 \item Will the system share the data with other systems or users?
 \end{itemize}
-\item \emph{Define scope and boundaries} \\
+\item \emph{Define scope and boundaries}
 The designer must recognize two sets of limits: scope and boundaries. The system’s \textbf{scope} defines the extent of the design according to operational requirements. Knowing the scope helps define the required data structures, the type and number of entities, the physical size of the database, and so on. The proposed system is also subject to limits known as \textbf{boundaries}, which are external to the system. These limits include budgets, personnel, and existing hardware and software.
 \end{enumerate}
 \subsection{Database Design}
@@ -455,7 +465,8 @@ The output of the database design phase is a series of instructions detailing th
 \subsection{Testing and	Evaluation}
 In the design phase, decisions were made to ensure integrity, security, performance, and recoverability of the database. During implementation and loading, these plans were put into place. In testing and evaluation, the DBA tests and fine-tunes the database to ensure that it performs as expected. Stages include:
 \begin{enumerate}
-\item Test the Database. \\ The following is normally tested:
+\item Test the Database.
+The following is normally tested:
 \begin{itemize}
 \item \emph{Physical security}
 \item \emph{Password security }
@@ -465,7 +476,8 @@ In the design phase, decisions were made to ensure integrity, security, performa
 \item \emph{Diskless workstations}
 \end{itemize}
 \item Fine-tune the Database
-\item Evaluate the Database and Its Application Programs. \\ \\ Database backups can be performed at different levels:
+\item Evaluate the Database and Its Application Programs.
+Database backups can be performed at different levels:
 \begin{itemize}
 \item A \textbf{full backup}, or \emph{dump}, of the entire database. In this case, all database objects are backed up in their entirety.
 \item A \textbf{differential backup} of the database, in which only the objects that have been updated or modified since the last full backup are backed up.
@@ -518,12 +530,13 @@ The conceptual design has four steps:
 \begin{enumerate}
 \item Identify the ER model’s central entity
 \item Identify each module and its components
-\item Identify each module’s transaction requirements: \\ \emph{Internal}: CRUD operations, queries, reports and \emph{External}: module interfaces
+\item Identify each module’s transaction requirements:
+\emph{Internal}: CRUD operations, queries, reports and \emph{External}: module interfaces
 \item Verify all processes against the module’s processing and reporting requirements
 \item Make all necessary changes suggested in Step 4
 \item Repeat Steps 2–5 for all modules
 \end{enumerate}
-\item Distributed Database Design\\
+\item Distributed Database Design
 Distributed database design defines the optimum allocation strategy for database fragments to ensure database integrity, security, and performance. The allocation strategy determines how to partition the database and where to store each fragment.
 \end{enumerate}
 \section{DBMS Software Selection}
@@ -547,31 +560,31 @@ Although the factors that affect the purchasing decision vary from company to co
 \item Map higher-degree relationships
 \end{itemize}
 \item Validate the logical model using normalization
-\\ The logical design should contain only properly normalized tables.
+The logical design should contain only properly normalized tables.
 \item Validate the logical model integrity constraints
-\\ The translation of the conceptual model into a logical model also requires definition of the attribute domains and appropriate constraints.
+The translation of the conceptual model into a logical model also requires definition of the attribute domains and appropriate constraints.
 \item Validate the logical model against user requirements
-\\ The logical design translates the software-independent conceptual model into a software-dependent model. The final step in the logical design process is to validate all logical model definitions against all end-user data, transaction, and security requirements. 
+The logical design translates the software-independent conceptual model into a software-dependent model. The final step in the logical design process is to validate all logical model definitions against all end-user data, transaction, and security requirements. 
 \end{enumerate}
 \section{Physical Design}
 \textbf{Physical design} is the process of determining the data storage organization and data access characteristics of the database to ensure its integrity, security, and performance. This is the last stage in the database design process. The physical design stage consists of 3 steps:
 \begin{enumerate}
 \item Define data storage organization
-\\ Before you can define data storage organization, you must determine the volume of data to be managed and the data usage patterns. Knowing the data volume will help you determine how much storage space to reserve for the database. Conversely, knowing how frequently new data is inserted, updated, and retrieved will help the designer determine the data usage patterns.
-\\Equipped with the two previous pieces of information, the designer must:
+Before you can define data storage organization, you must determine the volume of data to be managed and the data usage patterns. Knowing the data volume will help you determine how much storage space to reserve for the database. Conversely, knowing how frequently new data is inserted, updated, and retrieved will help the designer determine the data usage patterns.
+Equipped with the two previous pieces of information, the designer must:
 \begin{itemize}
 \item \emph{Determine the location and physical storage organization for each table}.
 \item \emph{Identify indexes and the type of indexes to be used for each table}.
 \item \emph{Identify the views and the type of views to be used on each table}.
 \end{itemize}
 \item Define integrity and security measures
-\\ In this step, two tasks must be addressed:
+In this step, two tasks must be addressed:
 \begin{itemize}
 \item \emph{Define user and security groups and roles}.
 \item \emph{Assign security controls}.
 \end{itemize}
 \item Determine performance measurements
-\\ Performance measurement deals with fine-tuning the DBMS and queries to ensure that they will meet end-user performance requirements.
+Performance measurement deals with fine-tuning the DBMS and queries to ensure that they will meet end-user performance requirements.
 \end{enumerate}
 \section{Database Design Strategies}
 There are two classical approaches to database design:
@@ -581,9 +594,9 @@ There are two classical approaches to database design:
 \end{itemize}
 \section{Centralized vs Decentralized Design}
 The two general approaches to database design (bottom-up and top-down) can be influenced by factors such as the scope and size of the system, the company’s management style, and the company’s structure (centralized or decentralized). Depending on these factors, the database design may be based on two very different design philosophies: centralized and decentralized. \\
-\\ \textbf{Centralized design} is productive when the data component has a relatively small number of objects and procedures. The design can be carried out and represented in a
-fairly simple database. Although centralized design is typical for small companies, do not make the mistake of assuming that it is limited to small companies. Even large companies can operate within a relatively simple database environment. \\
-\\ \textbf{Decentralized design} might be used when the system’s data component has a considerable number of entities and complex relations on which very complex operations are performed. Decentralized design is also often used when the problem itself is spread across several operational sites and each element is a subset of the entire data set.
+\textbf{Centralized design} is productive when the data component has a relatively small number of objects and procedures. The design can be carried out and represented in a
+fairly simple database. Although centralized design is typical for small companies, do not make the mistake of assuming that it is limited to small companies. Even large companies can operate within a relatively simple database environment.
+\textbf{Decentralized design} might be used when the system’s data component has a considerable number of entities and complex relations on which very complex operations are performed. Decentralized design is also often used when the problem itself is spread across several operational sites and each element is a subset of the entire data set.
 
 \chapter{The Relational Database Model}
 Outcomes:
@@ -712,7 +725,7 @@ common attribute(s). A natural join is the result of a three-stage process:
 \begin{enumerate}
 \item First, a PRODUCT of the tables is created.
 \item Second, a SELECT is performed on the output of Step 1 to yield only the rows for
-which the common columns' values are equal. The common columns are referred to as the \textbf{join columns}.
+which the common columns’ values are equal. The common columns are referred to as the \textbf{join columns}.
 \item A PROJECT is performed on the results of Step 2 to yield a single copy of each attribute, thereby eliminating duplicate columns.
 \end{enumerate}
 Note a few crucial features of the natural join operation:
@@ -879,7 +892,7 @@ In 1985, Dr. E. F. Codd published a list of 12 rules to define a relational data
 \begingroup
 \scriptsize
 \begin{center}
-\begin{longtable}{ p{5cm} || p{9cm} }
+\begin{longtable}{ p{5cm} p{9cm} }
 \caption{Dr. Codd’s 12 Relational Database Rules.\label{long}}\\
 \hline
 Rule Name & Description\\ 
@@ -939,13 +952,13 @@ Attributes are characteristics of entities. In the original Chen notation, attri
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{Attr}
-\caption{Attributes in Chen and Crow's Foot}
+\caption{Attributes in Chen and Crow’s Foot}
 \end{figure}
 \noindent A \textbf{required attribute} is an attribute that must have a value; in other words, it cannot be left empty. An \textbf{optional attribute} is an attribute that does not require a value; therefore, it can be left empty.\\
 Attributes have a domain. A \textbf{domain} is the set of possible values for a given attribute. Attributes may share a domain. For instance, a student address and a professor
 address share the same domain of all possible addresses. In fact, the data dictionary may let a newly declared attribute inherit the characteristics of an existing attribute if the
 same attribute name is used. For example, the PROFESSOR and STUDENT entities may each have an attribute named ADDRESS and could therefore share a domain.\\
-The ERM uses \textbf{identifiers}—one or more attributes that uniquely identify each entity instance. In the relational model, entities are mapped to tables, and the entity identifier is mapped as the table’s primary key (PK). Identifiers are underlined in the ERD. Key attributes are also underlined in a frequently used shorthand notation for the table structure, called a \textbf{relational schema}, that uses the following format:\\ \\
+The ERM uses \textbf{identifiers}--one or more attributes that uniquely identify each entity instance. In the relational model, entities are mapped to tables, and the entity identifier is mapped as the table’s primary key (PK). Identifiers are underlined in the ERD. Key attributes are also underlined in a frequently used shorthand notation for the table structure, called a \textbf{relational schema}, that uses the following format:\\ \\
 TABLE NAME (\uline{\textbf{{KEY\_ATTRIBUTE 1}}}, ATTRIBUTE 2, … ATTRIBUTE K)\\ \\
 Ideally, an entity identifier is composed of only a single attribute. However, it is possible to use a \textbf{composite identifier}, a primary key composed of more than one attribute. The following format is used:\\ \\
 TABLE NAME (\uline{\textbf{{KEY\_ATTRIBUTE 1, ATTRIBUTE 2}}}, … ATTRIBUTE K)\\ \\
@@ -973,7 +986,7 @@ Although this solution seems to work, its adoption can lead to major structural 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{Attr4}
-\caption{A New Entity Set Composed of a Multivalued Attribute's Components}
+\caption{A New Entity Set Composed of a Multivalued Attribute’s Components}
 \end{figure}
 \end{enumerate}
 \noindent Finally, a \textbf{derived attribute} is an attribute whose value is calculated (derived) from other attributes. The derived attribute need not be physically stored within the database; instead, it can be derived by using an algorithm.  A derived attribute is indicated in the Chen notation by a dashed line that connects the attribute and the entity. (See Figure 4.5.) The Crow’s Foot notation does not have a method for distinguishing the derived attribute from other attributes. Derived attributes are sometimes referred to as \emph{computed attributes}. Computing a derived attribute can be as simple as adding two attribute values located on the same row, or it can be the result of aggregating the sum of values located on many table rows (from the same table or from a different table). The decision to store derived attributes in database tables depends on the processing requirements and the constraints placed on a particular application. The designer should be able to balance the design in accordance with such constraints. 
@@ -1176,7 +1189,7 @@ First, you should understand the function of a primary key. Its main function is
 Second, primary keys and foreign keys are used to implement relationships among entities. However, the implementation of such relationships is done mostly behind the scenes, hidden from end users. In the real world, end users identify objects based on the characteristics they know about the objects. It is wise for database applications to mimic the human selection process as much as possible. Therefore, database applications should let the end user choose among multiple descriptive narratives of different objects, while using primary key values behind the scenes.
 \pagebreak
 \begin{center}
-\begin{longtable}{ ||p{5cm} | p{9cm}|| }
+\begin{longtable}{ p{5cm} p{9cm} }
 \caption{Desirable Primary Key Characteristics\label{long}}\\
 \toprule
 \toprule
@@ -1243,4 +1256,172 @@ The storage of time-variant data requires changes in the data model; the type of
 A \textbf{design trap} occurs when a relationship is improperly or incompletely identified and is therefore represented in a way that is not consistent with the real world. The most common design trap is known as a fan trap. A \textbf{fan trap} occurs when you have one entity in two 1:M relationships to other entities, thus producing an association among the other entities that is not expressed in the model. 
 \subsection{Redundant Relationships}
 Although redundancy is often good to have in computer environments, redundancy is seldom good in the database environment. Redundant relationships occur when there are multiple relationship paths between related entities. The main concern with redundant relationships is that they remain consistent across the model. However, it is important to note that some designs use redundant relationships as a way to simplify the design. Some relationships could be safely deleted without losing any information-generation capabilities in the model to keep redundancy at a minimum.
+\chapter{Normalisation}
+Outcomes:
+\begin{itemize}
+\item Discuss normalisation;
+\item Convert a dependency diagram to first, second, and third normal form; and
+\item Convert a table to first, second, and third normal form.
+\end{itemize}
+\section{Database Tables and Normalization}
+\textbf{Normalization} is a process for evaluating and correcting table structures to minimize data redundancies, thereby reducing the likelihood of data anomalies. The normalization process involves assigning attributes to tables based on the concepts of determination and functional dependency. Normalization works through a series of stages called normal forms. The first three stages are described as first normal form (1NF), second normal form (2NF), and third normal form (3NF). From a structural point of view, 2NF is better than 1NF, and 3NF is better than 2NF. For most purposes in business database design, 3NF is as high as you need to go in the normalization process. However, you will discover that properly designed 3NF structures also meet the requirements of fourth normal form (4NF). Although normalization is a very important ingredient in database design, you
+should not assume that the highest level of normalization is always the most desirable. Generally, the higher the normal form, the more relational join operations you need to produce a specified output. Also, more resources are required by the database system to respond to end-user queries. A successful design must also consider end-user demand for fast performance. Therefore, you will occasionally need to \emph{denormalize} some portions of a database design to meet performance requirements. \textbf{Denormalization} produces a lower normal form; that is, a 3NF will be converted to a 2NF through denormalization. However, the price you pay for increased performance through denormalization is greater data redundancy.\\
+In normalization terminology, any attribute that is at least part of a key is known as a \textbf{prime attribute} instead of the more common term \textbf{key attribute}, which was introduced earlier. Conversely, a \textbf{nonprime attribute}, or a \textbf{nonkey attribute}, is not part of any candidate key.
+\section{The Need for Normalization}
+Normalization is typically used in conjunction with the entity relationship modelings. Database designers commonly use normalization in two situations. When designing a new database structure based on the business
+requirements of the end users, the database designer can construct a data model. After the initial design is complete, the designer can use normalization to analyze the relationships among the attributes within
+each entity and determine if the structure can be improved through normalization.
+Alternatively, and also more frequently, database designers are often asked to modify existing data structures that can be in the form of flat files, spreadsheets, or older database structures The main goal of normalization is to eliminate data anomalies by eliminating unnecessary or unwanted data redundancies.
+\section{The Normalization Process}
+Normalization starts by identifying the dependencies of a given relation and progressively breaking up the relation (table) into a set of new relations (tables) based on the identified dependencies. Two types of functional dependencies that are of special interest in normalization are partial dependencies and transitive dependencies. A \textbf{partial dependency} exists when there is a functional dependence in which the determinant is only part of the primary key. A \textbf{transitive dependency} exists when there are functional dependencies such that \textbf{X $\longrightarrow$ Y, Y $\longrightarrow$ Z}, and \textbf{X} is the primary key.
+\subsection{Conversion to First Normal Form (1NF)}
+A \textbf{repeating group} derives its name from the fact that a group of multiple entries of the same or multiple types can exist for any \emph{single} key attribute occurrence. Normalizing the table structure will reduce the data redundancies. If repeating groups do exist, they must be eliminated by making sure that each row defines a single entity instance and that each row-column intersection has only a single value.
+Steps:
+\begin{enumerate}
+\item  Eliminate the Repeating Groups
+\item Identify the Primary Key
+\item Identify All Dependencies
+\end{enumerate}
+The term \textbf{first normal form (1NF)} describes the tabular format that conforms to the definition of a relational table in which:
+\begin{itemize}
+\item All of the key attributes are defined.
+\item There are no repeating groups in the table. In other words, each row/column intersection contains one and only one value, not a set of values.
+\item All attributes are dependent on the primary key.
+\end{itemize}
+\subsection{Conversion to Second Normal Form (2NF)}
+Conversion to 2NF occurs only when the 1NF has a composite primary key. If the 1NF has a single-attribute primary key, then the table is automatically in 2NF. The 1NF-to- 2NF conversion is simple. Starting with the 1NF format you take the following steps:
+\begin{enumerate}
+\item Make New Tables to Eliminate Partial Dependencies
+\item Reassign Corresponding Dependent Attributes
+\end{enumerate}
+A table is in \textbf{second normal form (2NF)} when:
+\begin{itemize}
+\item It is in 1NF, and
+\item It includes no partial dependencies; that is, no attribute is dependent on only a portion of the primary key.
+\end{itemize}
+It is still possible for a table in 2NF to exhibit transitive dependency. That is, the primary key may rely on one or more nonprime attributes to functionally determine other nonprime attributes, as indicated by a functional dependence among the nonprime attributes.
+\subsection{Conversion to Third Normal Form (3NF)}
+Steps:
+\begin{enumerate}
+\item Make New Tables to Eliminate Transitive Dependencies
+\item Reassign Corresponding Dependent Attributes
+\end{enumerate}
+Note for Step 1: For every transitive dependency, write a copy of its determinant as a primary key for a new table.
+A \textbf{determinant} is any attribute whose value determines other values within a row. If you have three different transitive dependencies, you will have three different determinants.
+Note for Step 2: Identify the attributes that are dependent on each determinant identified in Step 1. Place the dependent attributes in the new tables with their determinants and remove them from their original tables.
+A table is in \textbf{third normal form (3NF)} when:
+\begin{itemize}
+\item It is in 2NF, and
+\item It contains no transitive dependencies.
+\end{itemize}
+\section{Improving the Design}
+\begin{itemize}
+\item Evaluate PK Assignments
+\item Evaluate Naming Conventions
+\item Refine Attribute Atomicity
+\begin{itemize}
+\item An \textbf{atomic attribute} is one that cannot be further subdivided. Such an attribute is said to display \textbf{atomicity}.
+\end{itemize}
+\item Identify New Attributes
+\item Identify New Relationships
+\item Refine Primary Keys as Required for Data Granularity
+\begin{itemize}
+\item \textbf{Granularity} refers to the level of detail represented by the values stored in a table’s row. Data stored at its lowest level of granularity is said to be \emph{atomic data}, as explained earlier. 
+\end{itemize}
+\item Maintain Historical Accuracy
+\item Evaluate Using Derived Attributes
+\end{itemize}
+\section{Surrogate Key considerations}
+A composite primary key might become too cumbersome to use as the number of attributes grows. (It becomes difficult to create a suitable foreign key when the related table uses a composite primary key. In
+addition, a composite primary key makes it more difficult to write search routines.) Or, a primary key attribute might simply have too much descriptive content to be usable. When the primary key is considered unsuitable for some reason, designers use surrogate keys. At the implementation level, a surrogate key is a system-defined attribute generally created and managed via the DBMS. Usually, a system-defined surrogate key is numeric,
+and its value is automatically incremented for each new row.
+It is worth repeating that database design often involves trade-offs and the exercise of professional judgement. In a real-world environment, you must strike a balance between design integrity and flexibility.
+\section{Higher-level Normal Forms}
+Tables in 3NF will perform suitably in business transactional databases. However, higher normal forms are sometimes useful. In this section, you will learn about a special case of 3NF, known as Boyce-Codd normal form, and about fourth normal form (4NF).
+
+The Boyce-Codd Normal Form:
+
+A table is in \textbf{Boyce-Codd normal form (BCNF)} when every determinant in the table is a candidate key. When a table contains only one candidate key, the 3NF and the BCNF are equivalent. In other words, BCNF can be violated only when the table contains more than one candidate key. Most designers consider the BCNF to be a special case of the 3NF. In fact, if the techniques shown in this chapter are used, most tables conform to the BCNF requirements once the 3NF is reached. So, how can a table be in 3NF and not be in BCNF? To answer that question, you must keep in mind that a transitive dependency exists when one nonprime attribute is dependent on another nonprime attribute.
+
+Fourth Normal Form (4NF):
+
+A table is in \textbf{fourth normal form (4NF)} when it is in 3NF and has no multivalued dependencies. The discussion of 4NF is largely academic if you make sure that your tables conform to the following two rules:
+\begin{enumerate}
+\item All attributes must be dependent on the primary key, but they must be independent
+of each other.
+\item No row may contain two or more multivalued facts about an entity.
+\end{enumerate}
+\section{Normalization and Database Design}
+Many of the real-world databases you encounter will have been improperly designed or burdened with anomalies if they were improperly modified over the course of time. That means you might be asked to redesign
+and modify existing databases that are, in effect, anomaly traps. Therefore, you should be aware of good design principles and procedures as well as normalization procedures.
+
+First, an ERD is created through an iterative process. You begin by identifying relevant entities, their attributes, and their relationships. Then you use the results to identify additional entities and attributes. The ERD provides the big picture, or macro view, of an organization’s data requirements and operations.
+
+Second, normalization focuses on the characteristics of specific entities; that is, normalization represents a micro view of the entities within the ERD. The normalization process might yield additional
+entities and attributes to be incorporated into the ERD. Therefore, it is difficult to separate normalization from ER modeling; the two techniques are used in an iterative and incremental process.
+\section{Denormalization}
+Although the creation of normalized relations is an important database design goal, it is only one of many such goals. Good database design also considers processing (or reporting) requirements and processing speed. The problem with normalization is that as tables are decomposed to conform to normalization requirements, the number of database tables expands. Therefore, in order to generate information, data must be put together from various tables. Joining a large number of tables takes additional input/output (I/O) operations and processing logic, thereby reducing system speed. Most relational database systems are able to handle joins very efficiently.
+However, rare and occasional circumstances may allow some degree of denormalization, so processing speed can be increased. Keep in mind that the advantage of higher processing speed must be carefully weighed against the disadvantage of data anomalies. On the other hand, some anomalies are of only theoretical interest. 
+\pagebreak
+\section{Data-Modeling Checklist}
+\uline{\textbf{Business Rules:}}
+\begin{itemize}
+\item Properly document and verify all business rules with the end users.
+\item Ensure that all business rules are written precisely, clearly, and simply. The business rules must help identify entities, attributes, relationships, and constraints.
+\item Identify the source of all business rules, and ensure that each business rule is justified, dated, and signed off by an approving authority.
+\end{itemize}
+\uline{\textbf{Data Modeling:}}
+
+\textbf{Naming conventions}: All names should be limited in length (database-dependent size).
+\begin{itemize}
+\item Entity names:
+\begin{itemize}
+\item Should be nouns that are familiar to business and should be short and meaningful
+\item Should document abbreviations, synonyms, and aliases for each entity
+\item Should be unique within the model
+\item For composite entities, may include a combination of abbreviated names of the entities linked through the composite entity
+\end{itemize}
+\item Attribute names:
+\begin{itemize}
+\item Should be unique within the entity
+\item Should use the entity abbreviation as a prefix
+\item Should be descriptive of the characteristic
+\item Should use suffixes such as \_ID, \_NUM, or \_CODE for the PK attribute
+\item Should not be a reserved word
+\item Should not contain spaces or special characters such as @, !, or \&
+\end{itemize}
+\item Relationship names:
+\begin{itemize}
+\item Should be active or passive verbs that clearly indicate the nature of the relationship
+\end{itemize}
+\end{itemize}
+\textbf{Entities}:
+\begin{itemize}
+\item Each entity should represent a single subject
+\item Each entity should represent a set of distinguishable entity instances
+\item All entities should be in 3NF or higher. Any entities below 3NF should be justified
+\item The granularity of the entity instance should be clearly defined
+\item The PK should be clearly defined and support the selected data granularity
+\end{itemize}
+\textbf{Attributes}:
+\begin{itemize}
+\item Should be simple and single-valued (atomic data)
+\item Should document default values, constraints, synonyms, and aliases
+\item Derived attributes should be clearly identified and include source(s)
+\item Should not be redundant unless this is required for transaction accuracy, performance, or maintaining a history
+\item Nonkey attributes must be fully dependent on the PK attribute
+\end{itemize}
+\textbf{Relationships}:
+\begin{itemize}
+\item Should clearly identify relationship participants
+\item Should clearly define participation, connectivity, and document cardinality
+\end{itemize}
+\textbf{ER Model}:
+\begin{itemize}
+\item Should be validated against expected processes: inserts, updates, and deletions
+\item Should evaluate where, when, and how to maintain a history
+\item Should not contain redundant relationships except as required (see attributes)
+\item Should minimize data redundancy to ensure single-place updates
+\item Should conform to the minimal data rule: All that is needed is there, and all that is there is needed
+\end{itemize}
 \end{document}
